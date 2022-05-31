@@ -13,8 +13,10 @@ from textwrap import dedent
 
 MAX_GUESSES = 10
 
+
 def main():
-    '''Runs Bagels game'''
+    """Runs Bagels game"""
+
     print(show_instructions())
     computer_num = generate_computer_num()
     print(f'Computer_num: {computer_num}')
@@ -45,7 +47,7 @@ def main():
 
 
 def show_instructions():
-    '''Prints game instructions when the game begins'''
+    """Prints game instructions when the game begins"""
 
     game_instructions = '''
         I am thinking of a 3-digit number. 
@@ -68,19 +70,19 @@ def show_instructions():
 
 
 def generate_computer_num():
-    '''
+    """
     Generates and returns a 3-digit number
     (with leading zeroes if necessary)
-    '''
+    """
     # Generate zeroes as well.
     return str(random.randint(0, 999)).zfill(3)
 
 
 def show_hints(computer_num, user_guess):
-    '''
+    """
     Returns hints including "Fermi", "Pico", and "Bagels",
     as highlighted by the game instructions
-    '''
+    """
     # store 'Pico', 'Fermi', and 'Bagels' hints
     hints = []
 
@@ -99,9 +101,9 @@ def show_hints(computer_num, user_guess):
 
 
 def start_new_game():
-    '''
+    """
     Prompts the user to play another game.
-    '''
+    """
     play_again = input('Do you want to play again? (yes or no)\n>')
 
     if play_again.lower() in ('yes', 'y'):
