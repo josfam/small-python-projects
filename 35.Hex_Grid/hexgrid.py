@@ -9,37 +9,56 @@ import sys
 
 DEFAULT_WIDTH, DEFAULT_HEIGHT = 10, 10
 MIN_DIMENSIONS = 5
-X_REPEAT, Y_REPEAT = None, None
+UPPER_HALF = r'/ \_'
+LOWER_HALF = r'\_/ '
 
-# use defaults if no dimensions are given
-if len(sys.argv) == 1:
-    X_REPEAT, Y_REPEAT = DEFAULT_WIDTH, DEFAULT_HEIGHT
 
-elif not len(sys.argv) == 3:
-    sys.exit("usage: python3 hexgrid.py [<width> <height>]")
-else:
-    X_REPEAT, Y_REPEAT = sys.argv[1], sys.argv[2]
+def main():
+    width, height = get_pattern_dimensions(sys.argv)
+    print(make_pattern(width, height))
 
-    # accept only numbers
-    if not (X_REPEAT.isnumeric() and Y_REPEAT.isnumeric()):
-        sys.exit("width and height must be numbers")
 
-    # limit the length and width
-    elif not (int(X_REPEAT) >= MIN_DIMENSIONS and int(Y_REPEAT) >= MIN_DIMENSIONS):
-        sys.exit(f'Width and height must each be greater than {MIN_DIMENSIONS}')
+def get_pattern_dimensions(cmd_args):
+    """Returns the dimensions of the pattern, based on the state of the
+    commandline arguments"""
 
-upper_half = r'/ \_'
-lower_half = r'\_/ '
+    # use defaults if no dimensions are given
+    if len(cmd_args) == 1:
+        return DEFAULT_WIDTH, DEFAULT_HEIGHT
 
-X_REPEAT, Y_REPEAT = int(X_REPEAT), int(Y_REPEAT)
+    elif not len(cmd_args) == 3:
+        sys.exit("usage: python3 hexgrid.py [<width> <height>]")
+    else:
+        x_repeat, y_repeat = cmd_args[1], cmd_args[2]
 
-for y in range(Y_REPEAT):
-    # print the upper half of pattern
-    for x in range(X_REPEAT):
-        print(upper_half, end='')
-    print()
+        # accept only numbers
+        if not (x_repeat.isnumeric() and y_repeat.isnumeric()):
+            sys.exit("width and height must be numbers")
 
-    # print the lower half of pattern
-    for x in range(X_REPEAT):
-        print(lower_half, end='')
-    print()
+        # limit the length and width
+        elif not (int(x_repeat) >= MIN_DIMENSIONS and int(y_repeat) >= MIN_DIMENSIONS):
+            sys.exit(f'width and height must each be greater than {MIN_DIMENSIONS}')
+
+        return x_repeat, y_repeat
+
+
+def make_pattern(x_repeat, y_repeat):
+    """Makes the pattern given its length and width"""
+    pattern = []
+
+    for y in range(int(y_repeat)):
+        # print the upper half of pattern
+        for x in range(int(x_repeat)):
+            pattern.append(UPPER_HALF)
+        pattern.append('\n')
+
+        # print the lower half of pattern
+        for x in range(int(x_repeat)):
+            pattern.append(LOWER_HALF)
+        pattern.append('\n')
+
+    return ''.join(pattern)
+
+
+if __name__ == '__main__':
+    main()
