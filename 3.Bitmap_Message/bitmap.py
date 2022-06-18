@@ -3,7 +3,7 @@
 import sys
 from bitmap_patterns import patterns
 
-image = patterns.WORLD_MAP
+image = patterns.octo_cat
 
 print('Enter the message to display with the bitmap.')
 message = input('> ')
