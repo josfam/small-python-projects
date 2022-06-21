@@ -1,4 +1,4 @@
-# Small_Python_Projects
+# small_python_projects
 Non-chronological practice from `The Big Book of Small Python Projects`<br>
 by Al Sweigart.
 <br>
