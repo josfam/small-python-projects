@@ -15,7 +15,7 @@ with Python.
 # Notes on individual projects
 <br>
 
->##1.Bagels
+>## 1.Bagels
 >>**Changes made**
 >>1. Put code in functions to make it testable
 >>2. Added pytest tests
@@ -23,15 +23,19 @@ with Python.
 >>**Learned**
 >>1. `main()` is just a function that can be called withing itself, à la recursion
 >
->##35.Hex_Grid
+><br>
+>
+>## 35.Hex_Grid
 >>**Changes made**
 >>1. Made the code testable by putting functionality in functions
 >>2. Added pytest tests
 >>
 >>**Learned**
 >>1. A tesselation requires minimal starting shapes
-> 
->##3.Bitmap_Message
+>
+><br>
+>
+>## 3.Bitmap_Message
 >>**Changes made**
 >>1. Created separate .py file to store bitmap patterns
 >>
