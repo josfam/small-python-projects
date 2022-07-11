@@ -58,6 +58,7 @@ def show_instructions():
         Some rules:
 
         When I say:     It means that:
+        -------------------------------------------------------
         Pico            A digit in your guess is correct, 
                         but in the wrong position
 
