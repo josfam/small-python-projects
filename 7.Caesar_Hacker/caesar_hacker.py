@@ -6,15 +6,19 @@ from string import ascii_uppercase
 
 ALPHABET = ascii_uppercase
 POSSIBLE_KEYS = [n for n in range(0, len(ALPHABET))]
-
+OUTPUT_FILE = 'hacked_output.txt'
 
 def main():
     ciphertext = ask_for_ciphertext()
 
-    # decrypt the message using all possible keys
+    # write decrypted text to an output file, and print dashed lines after the last conversion
     for key in POSSIBLE_KEYS:
-        print(f"Key #{key}: ", end='')
-        print(decrypt(ciphertext, key))
+        with open(OUTPUT_FILE, 'a', encoding='utf8') as f:
+            f.write(f"Key #{key}: ")
+            f.write(decrypt(ciphertext, key))
+            f.write("\n")
+            if key == POSSIBLE_KEYS[-1]:
+                f.write('--------------------------------------------------\n')
 
 
 def ask_for_ciphertext():
