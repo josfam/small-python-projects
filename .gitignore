@@ -133,3 +133,6 @@ dmypy.json
 
 # iml
 *.iml
+
+# custom directories
+tmp_txt_files/
