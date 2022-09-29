@@ -14,6 +14,8 @@ def main():
 
 
 def get_collatz(n):
+    """Returns a collatz sequence from n to 1"""
+    
     collatz_seq = []
 
     # keep the first number as well
