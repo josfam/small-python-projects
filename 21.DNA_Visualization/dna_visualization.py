@@ -4,7 +4,7 @@ import random
 import time
 import sys
 
-PAUSE_DURATION = 0.15
+PAUSE_DURATION = 0.1
 
 # template for a dna double helix
 dna_skeleton = """      ~
