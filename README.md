@@ -12,47 +12,28 @@ interesting techniques and data structures for solving simple problems<br>
 with Python.
 <br>
 
-# Notes on individual projects
+## Notes on individual projects
 <br>
 
->## 1.Bagels
-**Changes made**
-1. Put code in functions to make it testable
-2. Added pytest tests
+## 1.Bagels
+Was reminded that `main()` is just a function that can be called within itself, à la recursion.
+<br><br>
 
-**Learned**
-1. `main()` is just a function that can be called withing itself, à la recursion
+## 35.Hex_Grid
+Learned that a tesselation requires minimal starting shapes.
+<br><br>
 
-<br>
+## 3.Bitmap_Message
+Re-learned the magical utility of the modulo operator, for repeating sequences<br>
+of things.
 
->## 35.Hex_Grid
-**Changes made**
-1. Made the code testable by putting functionality in functions
-2. Added pytest tests
+I created a separate .py file to store the bitmap pattern, rather than store the<br> 
+pattern inside the same py file as the general script.
+<br><br>
 
-**Learned**
-1. A tesselation requires minimal starting shapes
+## 12.Collatz_Sequence
+Un-learned the now-automatic practice of first accumulating a string using a a list,<br>
+then using .join() to make the string.You can instead print characters as you need them.
 
-<br>
-
->## 3.Bitmap_Message
-**Changes made**
-1. Created separate .py file to store bitmap patterns
-
-**Learned**
-1. The magical utility of the modulo operator, for repeating sequences of things
-
-<br>
-
->## 12.Collatz_Sequence
-**Learned**
-
-1.You can only use `.join()` with lists of strings.
-
-2.The concept of "flushing" output, to prevent it from being buffered.
-
-3.You don't always have to accumulate what you are generating in a list first.
-you can simply print it out as needed.
-
-<br>
-
+Learned what "flushing" output,to prevent it from being buffered, is.
+<br><br>
