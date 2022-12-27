@@ -37,3 +37,8 @@ then using .join() to make the string.You can instead print characters as you ne
 
 Learned what "flushing" output,to prevent it from being buffered, is.
 <br><br>
+
+## 12.DNA_Visualization
+Learned that the `{}` delimeter of the `str.format()` method can be pre-defined<br>
+in the string, then formatted later.
+<br><br>
