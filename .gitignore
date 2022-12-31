@@ -137,3 +137,6 @@ dmypy.json
 
 # custom directories
 tmp_txt_files/
+
+# IDE-specific
+settings.json
