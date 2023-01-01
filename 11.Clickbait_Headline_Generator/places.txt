@@ -1,0 +1,49 @@
+airport
+aquarium
+art gallery
+apartment building
+bakery
+bank
+bar
+beach
+beauty salon
+bookstore
+brewery
+bridge
+bus station
+cafe
+campground
+cathedral
+cemetery
+chapel
+city hall
+concerts
+courthouse
+daycare center
+dentist office
+doctor's office
+dormitory
+fire station
+florist
+grocery store
+hardware store
+hotel
+library
+lighthouse
+mansion
+movie theater
+museum
+observatory
+park
+parking garage
+parking lot
+pharmacy
+post office
+restaurant
+school
+shopping mall
+stadium
+theater
+train station
+university
+zoo
