@@ -42,3 +42,13 @@ Learned what "flushing" output,to prevent it from being buffered, is.
 Learned that the `{}` delimeter of the `str.format()` method can be pre-defined<br>
 in the string, then formatted later.
 <br><br>
+
+## 11.Clickbait Headline Generator
+Learned how to achieve the effects of a chain of if-elif-elif.. condtions with a
+dictionary-based approach.
+
+Changed the nouns, places, and states so that they live in files, as opposed to
+inside the python script itself.
+
+Used a considerably larger word list overall.
+<br><br>
