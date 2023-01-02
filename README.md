@@ -19,11 +19,11 @@ with Python.
 Was reminded that `main()` is just a function that can be called within itself, à la recursion.
 <br><br>
 
-## 35.Hex_Grid
+## 35.Hex Grid
 Learned that a tesselation requires minimal starting shapes.
 <br><br>
 
-## 3.Bitmap_Message
+## 3.Bitmap Message
 Re-learned the magical utility of the modulo operator, for repeating sequences<br>
 of things.
 
@@ -31,14 +31,14 @@ I created a separate .py file to store the bitmap pattern, rather than store the
 pattern inside the same py file as the general script.
 <br><br>
 
-## 12.Collatz_Sequence
+## 12.Collatz Sequence
 Un-learned the now-automatic practice of first accumulating a string using a a list,<br>
 then using .join() to make the string.You can instead print characters as you need them.
 
 Learned what "flushing" output,to prevent it from being buffered, is.
 <br><br>
 
-## 12.DNA_Visualization
+## 12.DNA Visualization
 Learned that the `{}` delimeter of the `str.format()` method can be pre-defined<br>
 in the string, then formatted later.
 <br><br>
