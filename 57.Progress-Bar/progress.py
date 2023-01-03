@@ -24,6 +24,9 @@ def main():
         # pause for a while
         time.sleep(PAUSE_DURATION)
 
+        if bytes_downloaded == DOWNLOAD_SIZE:
+            break
+
         # replace current progress bar with a new one on the same line
         print('\b' * len(progress_bar), end='', flush=True)
 
