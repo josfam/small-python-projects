@@ -1,7 +1,7 @@
 """Program that shows the provided message based on the bitmap image used"""
 
 import sys
-from bitmap_patterns import patterns
+from patterns import patterns
 
 image = patterns.octo_cat
 
