@@ -8,6 +8,7 @@ DOWNLOAD_SIZE = 4096
 
 
 def main():
+    print('Progress bar simulation')
     bytes_downloaded = 0
 
     while bytes_downloaded < DOWNLOAD_SIZE:
