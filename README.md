@@ -52,3 +52,9 @@ inside the python script itself.
 
 Used a considerably larger word list overall.
 <br><br>
+
+## 57.Progress Bar
+Learned about the '\b' escape character for back-spacing.
+
+Used more functions to split the load of the original getProgressBar function.
+<br><br>
