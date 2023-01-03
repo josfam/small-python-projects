@@ -1,3 +1,5 @@
+"""Program that generates click-bait titles"""
+
 import random
 import inflect
 

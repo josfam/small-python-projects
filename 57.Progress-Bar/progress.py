@@ -1,3 +1,5 @@
+"""Program that simulates a download progress bar on the commandline"""
+
 import random
 import time
 
