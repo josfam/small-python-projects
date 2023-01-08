@@ -1,47 +1,20 @@
-"""Program that visualizes a DNA double-helix"""
-
-import random
-import time
+"""Program that visualizes a DNA double-helix, and other variants if requested"""
+import argparse
 import sys
+from variants import DNA, BladeRunner2049
 
-PAUSE_DURATION = 0.1
+parser = argparse.ArgumentParser()
+parser.add_argument('--br2049', help='represents DNA as seen in Blade Runner 2049', action='store_true')
+args = parser.parse_args()
 
-# template for a dna double helix
-dna_skeleton = """      ~
-    {}~~~~{}
-  {}~~~~~~~~{}
-{}~~~~~~~~~~{}
-{}~~~~~~~~~~{}
-{}~~~~~~~~{}
-  {}~~~~{}
-    ~
-  {}~~~~{}
-{}~~~~~~~~{}
-{}~~~~~~~~~~{}
-{}~~~~~~~~~~{}
-  {}~~~~~~~~{}
-    {}~~~~{}
-"""
-
-# legal pairings of nucleotides
-NUCLEOTIDE_PAIRS = {
-    'A': 'T',
-    'T': 'A',
-    'C': 'G',
-    'G': 'C'
-}
-
-print('Press CTRL + C to stop the visualization\n')
-time.sleep(PAUSE_DURATION * 10)
-
-dna_sequence = dna_skeleton.splitlines()
+# show the double-helix by default if no other variant is chosen
+if args.br2049:
+    dna = BladeRunner2049()
+else:
+    dna = DNA()
 
 while True:
-    for row in dna_sequence:
-        try:
-            left_nucleotide = random.choice(list(NUCLEOTIDE_PAIRS.keys()))
-            right_nucleotide = NUCLEOTIDE_PAIRS[left_nucleotide]
-            time.sleep(PAUSE_DURATION)
-            print(row.format(left_nucleotide, right_nucleotide))
-        except KeyboardInterrupt:
-            sys.exit('\nGoodbye!')
+    try:
+        print(dna.get_DNA())
+    except KeyboardInterrupt:
+        sys.exit('\nGoodbye!')
