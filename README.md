@@ -41,6 +41,8 @@ Learned what "flushing" output,to prevent it from being buffered, is.
 ## 12.DNA Visualization
 Learned that the `{}` delimeter of the `str.format()` method can be pre-defined<br>
 in the string, then formatted later.
+<br>
+![basic-dna](demo-gifs/21.DNA-Visualization/dna.gif)
 <br><br>
 
 ## 11.Clickbait Headline Generator
