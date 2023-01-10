@@ -41,6 +41,11 @@ Learned what "flushing" output,to prevent it from being buffered, is.
 ## 12.DNA Visualization
 Learned that the `{}` delimeter of the `str.format()` method can be pre-defined<br>
 in the string, then formatted later.
+
+Added more DNA variants, including a representation of DNA inspired by the film
+Blade Runner 2049.
+
+Used classes to enable those other DNA variants
 <br>
 ![basic-dna](demo-gifs/21.DNA-Visualization/dna.gif)
 <br><br>
