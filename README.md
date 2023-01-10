@@ -64,4 +64,6 @@ Used a considerably larger word list overall.
 Learned about the '\b' escape character for back-spacing.
 
 Used more functions to split the load of the original getProgressBar function.
+<br>
+![basic-dna](demo-gifs/57.Progress-Bar/progress-bar.gif)
 <br><br>
