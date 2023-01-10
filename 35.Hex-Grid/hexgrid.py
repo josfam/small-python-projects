@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
-""""
-Program that prints a tessellated tile pattern to a text file for later
-viewing.
-"""
+""""Program that shows a tessellated pattern on the terminal"""
 
 import sys
 
