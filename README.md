@@ -58,6 +58,8 @@ Changed the nouns, places, and states so that they live in files, as opposed to
 inside the python script itself.
 
 Used a considerably larger word list overall.
+<br>
+![clickbait-healine-generator-demo](demo-gifs/11.Clickbait-Headline-Generator.gif)
 <br><br>
 
 ## 57.Progress Bar
