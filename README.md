@@ -47,7 +47,7 @@ Blade Runner 2049.
 
 Used classes to enable those other DNA variants
 <br>
-![basic-dna](demo-gifs/21.DNA-Visualization.gif)
+![dna-visualization-demo](demo-gifs/21.DNA-Visualization.gif)
 <br><br>
 
 ## 11.Clickbait Headline Generator
@@ -67,5 +67,5 @@ Learned about the '\b' escape character for back-spacing.
 
 Used more functions to split the load of the original getProgressBar function.
 <br>
-![basic-dna](demo-gifs/57.Progress-Bar.gif)
+![progress-bar-demo](demo-gifs/57.Progress-Bar.gif)
 <br><br>
