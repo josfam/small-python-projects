@@ -21,6 +21,8 @@ Was reminded that `main()` is just a function that can be called within itself, 
 
 ## 35.Hex Grid
 Learned that a tesselation requires minimal starting shapes.
+
+Became familiar with python's `argparse` module for handling commandline arguments.
 <br>
 ![hexgrid-demo](demo-gifs/35.Hex-Grid.gif)
 <br><br>
