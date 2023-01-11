@@ -2,59 +2,46 @@
 
 """"Program that shows a tessellated pattern on the terminal"""
 
+import argparse
 import sys
+import time
 
-DEFAULT_WIDTH, DEFAULT_HEIGHT = 10, 10
-MIN_DIMENSIONS = 5
-UPPER_HALF = r'/ \_'
-LOWER_HALF = r'\_/ '
+DEFAULT_WIDTH = 10
+DEFAULT_HEIGHT = None
+DEFAULT_UPPER_HALF = r'/ \_'
+DEFAULT_LOWER_HALF = r'\_/ '
+PAUSE_DURATION = 0.3
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-W', '--width', type=int, help='How wide the pattern will be')
+parser.add_argument('-H', '--height', type=int, help='How tall the pattern will be')
+
+args = parser.parse_args()
+
+# use the specified width and height, or use the defults otherwise
+width = args.width if args.width else DEFAULT_WIDTH
+height = args.height if args.height else DEFAULT_HEIGHT
 
 
 def main():
-    width, height = get_pattern_dimensions(sys.argv)
-    print(make_pattern(width, height))
-
-
-def get_pattern_dimensions(cmd_args):
-    """Returns the dimensions of the pattern, based on the state of the
-    commandline arguments"""
-
-    # use defaults if no dimensions are given
-    if len(cmd_args) == 1:
-        return DEFAULT_WIDTH, DEFAULT_HEIGHT
-
-    elif not len(cmd_args) == 3:
-        sys.exit("usage: python3 hexgrid.py [<width> <height>]")
+    # print an infinitely tall pattern if no height was given, 
+    # otherwise print a pattern that is height units tall
+    if height is None:
+        while True:
+            try:
+                print(get_one_complete_row(width))
+                time.sleep(PAUSE_DURATION)
+            except KeyboardInterrupt:
+                sys.exit('Goodbye')
     else:
-        x_repeat, y_repeat = cmd_args[1], cmd_args[2]
-
-        # accept only numbers
-        if not (x_repeat.isnumeric() and y_repeat.isnumeric()):
-            sys.exit("width and height must be numbers")
-
-        # limit the length and width
-        elif not (int(x_repeat) >= MIN_DIMENSIONS and int(y_repeat) >= MIN_DIMENSIONS):
-            sys.exit(f'width and height must each be greater than {MIN_DIMENSIONS}')
-
-        return x_repeat, y_repeat
+        for _ in range(height):
+            print(get_one_complete_row(width))
+            time.sleep(PAUSE_DURATION)
 
 
-def make_pattern(x_repeat, y_repeat):
-    """Makes the pattern given its length and width"""
-    pattern = []
-
-    for y in range(int(y_repeat)):
-        # print the upper half of pattern
-        for x in range(int(x_repeat)):
-            pattern.append(UPPER_HALF)
-        pattern.append('\n')
-
-        # print the lower half of pattern
-        for x in range(int(x_repeat)):
-            pattern.append(LOWER_HALF)
-        pattern.append('\n')
-
-    return ''.join(pattern)
+def get_one_complete_row(width):
+    """Returns a row of the upper and lower half of the tesselation"""
+    return f'{DEFAULT_UPPER_HALF * width}\n{DEFAULT_LOWER_HALF * width}'
 
 
 if __name__ == '__main__':
