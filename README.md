@@ -33,6 +33,8 @@ of things.
 
 I created a separate .py file to store the bitmap pattern, rather than store the<br> 
 pattern inside the same py file as the general script.
+<br>
+![bitmap-message-demo](demo-gifs/3.Bitmap-Message.gif)
 <br><br>
 
 ## 12.Collatz Sequence
