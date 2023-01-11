@@ -1,9 +1,15 @@
 """Program that shows the provided message based on the bitmap image used"""
 
+import argparse
 import sys
 from patterns import patterns
 
-image = patterns.octo_cat
+parser = argparse.ArgumentParser()
+parser.add_argument('--octocat', action='store_true', help='Shows the message in the form of an octocat')
+args = parser.parse_args()
+
+# use a world map by default, if no option is chosen
+image = patterns.octo_cat if args.octocat else patterns.world_map
 
 print('Enter the message to display with the bitmap.')
 message = input('> ')
