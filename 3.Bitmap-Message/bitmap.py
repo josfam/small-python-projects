@@ -17,12 +17,12 @@ message = input('> ')
 if message == '':
     sys.exit('Cannot have an empty message.')
 
-# Fetch all lines in the image
+# Fetch all lines in the bitmap image
 image_lines = image.splitlines()
 
-# Iterate through each line
+# Iterate through each line in the bitmap pattern, while printing an appropriate part
+# of the message at every character of the bitmap pattern
 for line in image_lines:
-    # Loop through each character in that line
     for i, char in enumerate(line):
         if char == ' ':
             print(' ', end='')
