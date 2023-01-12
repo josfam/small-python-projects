@@ -1,35 +1,44 @@
 """Program that simulates a download progress bar on the commandline"""
 
+import argparse
 import random
 import rich
 import time
 
 PAUSE_DURATION = 0.2
 ONE_BAR = chr(9608)  # represents █
-ONE_DASH = '\u2013' # represents –
+ONE_DASH = '\u2013'  # represents –
 BAR_WIDTH = 40
-DOWNLOAD_SIZE = 4096
+DEFAULT_DOWNLOAD_SIZE = 1024
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-s', '--size', type=int, help="the size of 'data' to be 'downloaded'")
+parser.add_argument('-l', '--ladder', action='store_true', help="display the download bar as stacked cumulative chunks")
+args = parser.parse_args()
+
+download_size = args.size if args.size else DEFAULT_DOWNLOAD_SIZE
+display_mode = '\n' if args.ladder else ''
 
 
 def main():
     print('Progress bar simulation')
     bytes_downloaded = 0
 
-    while bytes_downloaded < DOWNLOAD_SIZE:
+    while bytes_downloaded < download_size:
         # 'download' a random number of 'bytes', then show the progress bar
         bytes_downloaded += random.randint(0, 100)
 
         # clamp down the 'bytes' 'downloaded' to stay between 0 and the total bytes
-        if bytes_downloaded > DOWNLOAD_SIZE:
-            bytes_downloaded = DOWNLOAD_SIZE
+        if bytes_downloaded > download_size:
+            bytes_downloaded = download_size
 
-        progress_bar = get_progress_bar(bytes_downloaded, DOWNLOAD_SIZE)
-        rich.print(progress_bar, end='', flush=True)
+        progress_bar = get_progress_bar(bytes_downloaded, download_size)
+        rich.print(f'{progress_bar}{display_mode}', end='', flush=True)
 
         time.sleep(PAUSE_DURATION)
 
         # stop if all 'bytes' have been 'downloaded'
-        if bytes_downloaded == DOWNLOAD_SIZE:
+        if bytes_downloaded == download_size:
             break
 
         # replace current progress bar with a new one on the same line
