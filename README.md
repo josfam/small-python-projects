@@ -84,5 +84,6 @@ Added a display mode where the 'downloaded data' is displayed as stacked chunks,
 that look like a ladder.
 
 <br>
+
 ![progress-bar-demo](demo-gifs/57.Progress-Bar.gif)
 <br><br>
