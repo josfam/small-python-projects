@@ -42,6 +42,10 @@ Un-learned the now-automatic practice of first accumulating a string using a a l
 then using .join() to make the string.You can instead print characters as you need them.
 
 Learned what "flushing" output,to prevent it from being buffered, is.
+
+Experimented with the `rich` library for text formatting
+<br>
+![collatz-sequence-demo](demo-gifs/12.Collatz-Sequence.gif)
 <br><br>
 
 ## 12.DNA Visualization
