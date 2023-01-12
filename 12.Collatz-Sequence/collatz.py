@@ -68,7 +68,7 @@ def get_arrows(prev_num, current_num) -> str:
 
     arrow_count = abs(current_num - prev_num)
     if current_num < prev_num:
-        return '[bold deep_pink4]{}[/bold deep_pink4]'.format(DOWN_ARROW * arrow_count)
+        return '[bold hot_pink]{}[/bold hot_pink]'.format(DOWN_ARROW * arrow_count)
     else:
         return '[bold green]{}[/bold green]'.format(UP_ARROW * arrow_count)
 
