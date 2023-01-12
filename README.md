@@ -77,6 +77,12 @@ Used a considerably larger word list overall.
 Learned about the '\b' escape character for back-spacing.
 
 Used more functions to split the load of the original getProgressBar function.
+
+Addded the ability to specify how much 'data' to 'download'.
+
+Added a display mode where the 'downloaded data' is displayed as stacked chunks,
+that look like a ladder.
+
 <br>
 ![progress-bar-demo](demo-gifs/57.Progress-Bar.gif)
 <br><br>
