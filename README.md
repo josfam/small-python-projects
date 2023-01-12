@@ -45,6 +45,7 @@ Learned what "flushing" output,to prevent it from being buffered, is.
 
 Experimented with the `rich` library for text formatting
 <br>
+
 ![collatz-sequence-demo](demo-gifs/12.Collatz-Sequence.gif)
 <br><br>
 
