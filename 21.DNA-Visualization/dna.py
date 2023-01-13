@@ -1,5 +1,6 @@
 """Program that visualizes a DNA double-helix, and other variants if requested"""
 import argparse
+import rich
 import sys
 from variants import DNA, BladeRunner2049
 
@@ -15,6 +16,6 @@ else:
 
 while True:
     try:
-        print(dna.get_DNA())
+        rich.print(dna.get_DNA())
     except KeyboardInterrupt:
         sys.exit('\nGoodbye!')

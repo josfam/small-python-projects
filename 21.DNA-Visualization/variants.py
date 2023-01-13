@@ -50,12 +50,21 @@ class BladeRunner2049(DNA):
     in RAW format--as seen in the 2017 film, Blade Runner 2049. 'Satcrystal backup' is jargon from the film."""
 
     def __init__(self) -> None:
+        self.colour = {'block': f'[grey30]', 'dna': f'[cadet_blue]', 'split_block_fill': f'[cyan1]'}
+
+        # assign different blocks their colours
+        block_colour, split_color = self.colour['block'], self.colour['split_block_fill']
+        split_fill = f'{split_color}█{split_color}'
+        single_block = f'{block_colour}█   {block_colour}'
+        triple_block = f'{block_colour}███ {block_colour}'
+        split_block = f'{block_colour}█{block_colour}{split_fill}{block_colour}█ {block_colour}'
+
         # each {}{}{}{} represents a segment
         self.skeleton = '{}{}{}{}-{}{}{}{}-{}{}{}{}'
-        # bias the randomness to favor ███, then █ █, then █
-        self.edges_and_weights = {'███ ': 10, '█ █ ': 0.2, '█   ': 0.02}
-        self.tape_edges = list(self.edges_and_weights.keys())
-        self.tape_weights = list(self.edges_and_weights.values())
+        # bias the randomness
+        self.edges_and_weights = {single_block: 0.02, triple_block: 10, split_block: 0.3}
+        self.tape_edges = tuple(self.edges_and_weights.keys())
+        self.tape_weights = tuple(self.edges_and_weights.values())
         self.SEGMENT_COUNT = len(self.skeleton.split('-'))
         self.NUCLEOTIDES_PER_SEGMENT = 4
         self.TAPES_COUNT = 3
@@ -76,7 +85,10 @@ class BladeRunner2049(DNA):
             nucleotides.extend((l_nucleotide, r_nucleotide))
             nucleotide_num += 1
 
-        one_tape = self.get_tape_edge() + self.skeleton.format(*nucleotides) + ' ' + self.get_tape_edge() + ' '
+        # colour the dna characters
+        dna_letters = self.skeleton.format(*nucleotides)
+        coloured_dna = f'{self.colour["dna"]}{dna_letters}{self.colour["dna"]}'
+        one_tape = f'{self.get_tape_edge()}{coloured_dna} {self.get_tape_edge()} '
         return one_tape
 
     def get_row_of_all_tapes(self) -> str:
@@ -97,7 +109,7 @@ class BladeRunner2049(DNA):
         """Returns how much waiting will occur between vertical scrolls of the tapes.'"""
         # bias the randomness to favor shorter wait time
         wait_times_and_weights = {0.08: 10, 0.4: 0.8}
-        wait_times = list(wait_times_and_weights.keys())
-        wait_weights = list(wait_times_and_weights.values())
+        wait_times = tuple(wait_times_and_weights.keys())
+        wait_weights = tuple(wait_times_and_weights.values())
         wait_time = random.choices(wait_times, weights=wait_weights)[0]
         return wait_time
