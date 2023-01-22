@@ -102,7 +102,21 @@ that look like a ladder.
 \
 ![progress-bar-demo](demo-gifs/57.Progress-Bar.gif)
 
-<br>
+## 18.Dice Roller
 
-![progress-bar-demo](demo-gifs/57.Progress-Bar.gif)
-<br><br>
+Experimented with manual text formatting (especially with justifying text)
+\
+\
+Added output that:
+
+- only shows, at most, 10 recently rolled dice (all dice are still seen as the output of each roll is
+\
+printed on a new line)
+- indicates a reduction of points in red text, and an increase of points in green text
+
+Addded the ability to specify how much 'data' to 'download'.
+\
+Experimented more with the `typing`, and `collections` modules
+\
+\
+![dice-roller-demo](demo-gifs/18.Dice-Roller.gif)
