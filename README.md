@@ -109,13 +109,11 @@ Experimented with manual text formatting (especially with justifying text)
 \
 Added output that:
 
-- only shows, at most, 10 recently rolled dice (all dice are still seen as the output of each roll is
+- only shows, at most, 10 recently rolled dice (all dice are still seen as the output of each new die in a roll is
 \
-printed on a new line)
+printed on a new line, along with at most 9 other dice rolled before it)
 - indicates a reduction of points in red text, and an increase of points in green text
 
-Addded the ability to specify how much 'data' to 'download'.
-\
 Experimented more with the `typing`, and `collections` modules
 \
 \
