@@ -12,7 +12,7 @@ CellStats = namedtuple('CellStats', ['location', 'status'])
 
 ALIVE = '\u25A0'  # represents '■'
 DEAD = '-'
-DEFAULT_GRID_SIZE = 15
+DEFAULT_GRID_SIZE = 10
 CELL_ITERATION_HISTORY_SIZE = 3  # length of 3 makes sure to catch similar patterns that are one iteration apart
 
 
@@ -140,7 +140,7 @@ class ConwaysGameOfLife:
 
         return next_gen
 
-    def run_game_of_life(self, iterations: int = 3):
+    def run_game_of_life(self, iterations: int):
         """Runs Conway's game of life `iterations` times"""
         current_gen = deepcopy(self._grid)
 
@@ -180,7 +180,7 @@ def show_iteration_as_grid(generation: List[str], size: int) -> None:
 
 
 def main():
-    DEFAULT_ITERATIONS = 100
+    DEFAULT_ITERATIONS = 50
     DEFAULT_PAUSE_TIME = 0.2
 
     # setup commandline args
