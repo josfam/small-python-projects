@@ -17,6 +17,21 @@ with Python.
 
 ## Notes on individual projects
 
+## 13.Conway-Game-Of-Life
+
+Added features that allow the user to:
+
+- Change the grid size of the game
+- Change the number of iterations allowed for the game
+- Change the time in between iterations
+
+Explored the ideas of composing classes together.
+\
+Worked with generators and the `zip()` built in function
+\
+\
+![conway's-game-of-life-demo](demo-gifs/13.Conway-Game-Of-Life.gif)
+
 ## 1.Bagels
 
 Was reminded that `main()` is just a function that can be called within itself, à la recursion.
